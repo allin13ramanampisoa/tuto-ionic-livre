@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,10 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+
+    const fireBaseConfig = {};
+
+    firebase.initializeApp(fireBaseConfig);
   }
 
   initializeApp() {

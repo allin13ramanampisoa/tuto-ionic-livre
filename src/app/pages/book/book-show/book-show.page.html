@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Information sur le livre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-img [src]="book.photo" *ngIf="book.photo"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Auteur: {{ book.author }}</ion-card-subtitle>
+      <ion-card-title>{{ book.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="book.synopsis">
+      {{ book.synopsis }}
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="alertSuppressionConfirm(book)">
+      <ion-icon name="remove-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
